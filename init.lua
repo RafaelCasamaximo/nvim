@@ -3,4 +3,5 @@ require "user.plugins"
 require "user.nvim-tree"
 require "user.keymaps"
 require "user.bufferline"
-
+require "user.lsp"
+require "user.cmp"
