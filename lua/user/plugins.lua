@@ -47,13 +47,34 @@ return packer.startup(function(use)
   	use "L3MON4D3/LuaSnip"
 	use "rafamadriz/friendly-snippets"
  	use "saadparwaiz1/cmp_luasnip"
+	-- Treesitter
+  	use {
+    	"nvim-treesitter/nvim-treesitter",
+    	run = ":TSUpdate",
+  	}
+  	use "windwp/nvim-ts-autotag"
+  	use "windwp/nvim-autopairs"
+  	use "p00f/nvim-ts-rainbow"
+  	use "nvim-treesitter/nvim-treesitter-refactor"
 
-	
+  	use "JoosepAlviste/nvim-ts-context-commentstring"
+  	use "numToStr/Comment.nvim"
  	-- LSP
   	use "neovim/nvim-lspconfig"
   	use "williamboman/nvim-lsp-installer"
 
-	if PACKER_BOOTSTRAP then 
+	use({
+    	'rose-pine/neovim',
+   		as = 'rose-pine',
+    	tag = 'v1.*',
+    	config = function()
+        	vim.cmd('colorscheme rose-pine')
+    	end
+	})
+	-- LuaLine
+	use "nvim-lualine/lualine.nvim"
+
+	if PACKER_BOOTSTRAP then
 		require "packer".sync()
 	end
 end)

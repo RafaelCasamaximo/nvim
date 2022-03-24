@@ -4,9 +4,11 @@ local options = {
 	tabstop = 4,
 	number = true,
 	wrap = false,
+	swapfile = false,
+	undofile = true,
 }
 
-for k, v in pairs(options) do 
+for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
@@ -14,3 +16,4 @@ end
 vim.g.nord_borders = true
 
 require("nord").set()
+--vim.cmd('colorscheme rose-pine')
