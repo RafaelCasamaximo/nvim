@@ -63,6 +63,10 @@ return packer.startup(function(use)
   	use "neovim/nvim-lspconfig"
   	use "williamboman/nvim-lsp-installer"
 
+	-- Alpha Dashboard
+	use "goolord/alpha-nvim"
+
+	-- Rose Pine Theme
 	use({
     	'rose-pine/neovim',
    		as = 'rose-pine',
